@@ -1,0 +1,20 @@
+{
+  "name": "blog-system",
+  "version": "1.0.0",
+  "description": "Application for creating posts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RinatValiullov/blog-system.git"
+  },
+  "keywords": ["html", "css", "javascript", "webpack", "firebase"],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RinatValiullov/blog-system/issues"
+  },
+  "homepage": "https://github.com/RinatValiullov/blog-system#readme"
+}
