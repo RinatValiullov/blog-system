@@ -8,9 +8,9 @@ import { LoaderComponent } from "./components/loader.component";
 new HeaderComponent("header");
 
 const Navigation = new NavigationComponent("navigation");
-const Loader = new LoaderComponent("loader");
+const loader = new LoaderComponent("loader");
 
-const Posts = new PostsComponent("posts", { Loader });
+const Posts = new PostsComponent("posts", { loader });
 const Create = new CreateComponent("create");
 const Favorite = new FavoriteComponent("favorite");
 
