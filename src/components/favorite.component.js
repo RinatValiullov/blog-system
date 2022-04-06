@@ -26,7 +26,7 @@ class FavoriteComponent extends Component {
 async function linkClickHandler(event) {
   event.preventDefault();
   if (event.target.classList.contains("js-link")) {
-    const postId = event.target.textContent;
+    const postId = event.target.dataset.id;
     this.$el.innerHTML = "";
     this.loader.show();
     const post = await apiService.fetchPostById(postId);
@@ -44,7 +44,7 @@ function renderList(list = []) {
       <ul>
         ${list
           .map((item) => {
-            return `<li><a href="#" class="js-link">${item}</a></li>`;
+            return `<li><a href="#" class="js-link" data-id="${item.id}">${item.title}</a></li>`;
           })
           .join(" ")}
       </ul>

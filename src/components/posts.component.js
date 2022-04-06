@@ -32,21 +32,26 @@ class PostsComponent extends Component {
 function buttonHandler(event) {
   const elem = event.target;
   const id = elem.dataset.id;
+  const title = elem.dataset.title;
+
   if (id) {
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const candidate = favorites.find(
+      (postCandidate) => postCandidate.id === id
+    );
 
-    if (favorites.includes(id)) {
+    if (candidate) {
       elem.textContent = "Сохранить";
       elem.classList.add("button-success");
       elem.classList.remove("button-danger");
 
-      favorites = favorites.filter((favId) => favId !== id);
+      favorites = favorites.filter((postCandidate) => postCandidate.id !== id);
     } else {
       elem.classList.remove("button-success");
       elem.classList.add("button-danger");
       elem.textContent = "Удалить";
 
-      favorites.push(id);
+      favorites.push({ id, title });
     }
 
     localStorage.setItem("favorites", JSON.stringify(favorites));
